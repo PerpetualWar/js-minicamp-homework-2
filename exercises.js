@@ -85,6 +85,13 @@ function isPrime(num) {
   //hint2: you can solve this using a for loop
   //note: 0 and 1 are NOT considered prime numbers
   
+    for(var i = 2; i < num; i++) {
+        if(num % i === 0) {
+            return false;
+        }
+    }
+    return num > 1;
+ 
 }
 
 function returnFirst(arr) {
@@ -174,7 +181,10 @@ function averageTestScore(testScores) {
 function largestNumber(numbers) {
   //numbers is an array of integers
   //return the largest integer
-  return numbers
+  numbers.sort(function(a, b) {
+    return a - b;
+  });
+ return numbers.pop();
 }
 
 //Do not modify code below this line.
